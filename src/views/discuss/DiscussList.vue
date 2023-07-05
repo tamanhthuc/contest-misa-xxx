@@ -23,7 +23,7 @@
         />
       </div>
     </div>
-    <DiscussDetail :data="data[0]" v-if="showDetail"></DiscussDetail>
+    <DiscussDetail :data="data[0]" v-if="showDetail" @back="handleBack"></DiscussDetail>
    <dialog-discuss ref="dialogRef" />
   </template>
   <script>
@@ -102,6 +102,10 @@
         this.discuss = item;
         this.showDetail = true;
       },
+      handleBack(){
+        this.showDetail = false;
+
+      }
     },
   };
   </script>

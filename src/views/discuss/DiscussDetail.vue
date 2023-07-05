@@ -39,6 +39,11 @@
           <p class="item-desc">Sử dụng thuộc tính flex-wrap thử xem bạn.</p>
         </div>
       </div>
+      <div class="btn-back">
+      <button class="icon-button btn create" @click="onBack()">
+        <p class="btn-label">Quay lại</p>
+      </button>
+    </div>
     </div>
   </template>
   
@@ -46,6 +51,11 @@
   export default {
     name: "DiscussDetail",
     props: ["data"],
+    methods: {
+        onBack(){
+            this.$emit("back")
+        }
+    }
   };
   </script>
   
