@@ -1,6 +1,7 @@
 <template>
     <div class="input__container search">
       <input v-bind="$attrs" :value="modelValue" @input="handleInput" />
+      
       <div class="icon-search input-icon-search icon"></div>
     </div>
   </template>
@@ -25,6 +26,10 @@
   </script>
   
   <style scoped>
+.input__container {
+    position: relative;
+}
+
   .search {
     position: relative;
     width: 260px;
@@ -39,8 +44,8 @@
   
   .input-icon-search {
     position: absolute;
-    top: 50%;
-    right: 0;
+    top: 43%;
+   
     /* transform: translate(0, -50%); */
     transform: translateY(-50%);
     right: 8px;

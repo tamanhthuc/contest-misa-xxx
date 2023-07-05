@@ -3,7 +3,8 @@ import CustomerList from '@/views/customer/CustomerList.vue'
 import ReportList from '@/views/report/ReportList.vue'
 import SettingIndex from '@/views/setting/SettingIndex.vue'
 import HomePage from '@/views/Index.vue'
-import DiscussList from '@/views/discuss/DiscussList.vue'
+import DiscussList from '@/views/discuss/DiscussList.vue';
+import DiscussDetail from "@/views/discuss/DiscussDetail.vue";
 
 const routers = [
     {
@@ -30,6 +31,11 @@ const routers = [
         path:"/discuss",
         name:"DiscussRouter",
         component:DiscussList
+    },
+    {
+        path:"/discuss/:id",
+        name:"DiscussDetailRouter",
+        component:DiscussDetail
     }
 ]
 

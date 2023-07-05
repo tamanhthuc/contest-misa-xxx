@@ -1,10 +1,10 @@
 <template>
     <div class="d-wrapper">
       <div class="d-header">
-        <div class="d-title">Tiều đề: {{ data.ThreadName }}</div>
+        <div class="d-title">Tiều đề: {{ res.ThreadName }}</div>
         <p>
           <span class="author">Người đăng:</span>
-          <span>{{ data.ThreadUser }}</span>
+          <span>{{ res.ThreadUser }}</span>
         </p>
         <p class="desc">
           "Em cần sắp xếp dòng code. Em cần sắp xếp dòng code. Em cần sắp xếp dòng
@@ -13,7 +13,7 @@
       </div>
       <div class="btn-answer">
         <button class="icon-button btn create">
-          <p class="btn-label">Trả lời</p>
+          <p class="btn-label" @click="handleAddAnswer">Trả lời</p>
         </button>
       </div>
       <div class="d-content">
@@ -40,20 +40,42 @@
         </div>
       </div>
       <div class="btn-back">
-      <button class="icon-button btn create" @click="onBack()">
+      <button class="icon-button btn create" @click="onBack">
         <p class="btn-label">Quay lại</p>
       </button>
     </div>
     </div>
+    <dialog-answer ref="dialogRef" />
   </template>
   
   <script>
+  import DialogAnswer from "@/components/dialogAnswer/DialogAnswer";
+import router from "@/router/router";
   export default {
     name: "DiscussDetail",
     props: ["data"],
+    components: {
+        DialogAnswer
+    },
+    data() {
+        return {
+            res: {
+                ThreadId: 1,
+            ThreadName: "Cần giúp đỡ về việc sử dụng thuộc tính flex?",
+            ThreadType: 1,
+            ThreadUser: "Nguyễn Văn Mạnh",
+            AnswerNumber: 100,
+            CreatedDate: "",
+            }
+        }
+    },
     methods: {
+        handleAddAnswer(){
+            console.log("log")
+            this.$refs.dialogRef.show()
+        },
         onBack(){
-            this.$emit("back")
+            router.push({path: "/discuss"})
         }
     }
   };

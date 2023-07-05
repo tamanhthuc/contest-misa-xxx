@@ -19,16 +19,16 @@
           v-for="item in data"
           :data="item"
           :key="item.ThreadId"
-          @click="onClick(item)"
+         
         />
       </div>
     </div>
-    <DiscussDetail :data="data[0]" v-if="showDetail" @back="handleBack"></DiscussDetail>
+    <!-- <DiscussDetail :data="data[0]" v-if="showDetail"></DiscussDetail> -->
    <dialog-discuss ref="dialogRef" />
   </template>
   <script>
   import DialogDiscuss from "@/components/dialogDiscuss/DialogDiscuss.vue"
-  import DiscussDetail from "./DiscussDetail.vue";
+//   import DiscussDetail from "./DiscussDetail.vue";
   import QuetionItem from "@/components/quetion-item/QuetionItem.vue";
   import InputTextFieldIconSearch from "@/components/InputTextFieldIconSearch/InputTextFieldIconSearch.vue";
   export default {
@@ -36,7 +36,7 @@
     components: {
       QuetionItem,
       InputTextFieldIconSearch,
-      DiscussDetail,
+   
       DialogDiscuss
     },
     created() {

@@ -1,4 +1,5 @@
 <template>
+  <router-link :to="'discuss/'+data.ThreadId">
     <div class="q-wrapper">
       <img src="@/assets/icon/question-48.png" class="icon" v-if="data.ThreadType === 1"/>
       <img src="@/assets/icon/discuss-32.png" class="icon" v-if="data.ThreadType === 2"/>
@@ -12,12 +13,24 @@
         </div>
       </div>
     </div>
+  </router-link>
+   
+   
   </template>
   
   <script>
   export default {
     name: "QuestionItem",
-    props: ["data"],
+    props: {
+      data: {
+        type: Object
+      }
+    },
+    data(){
+      return {
+       
+      }
+    }
   };
   </script>
   

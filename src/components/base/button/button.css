@@ -33,6 +33,13 @@ button:hover {
     border: none;
 }
 
+.btn--red {
+    background-color: red;
+    color: #fff;
+    border: none;
+    margin-right: 12px;
+}
+
 
 .btn--primary:hover {
     background-color: #57C841;
